@@ -12,3 +12,14 @@ SELECT * FROM `courses` WHERE `period` = 'I semestre' AND `year` = 1
 
 /* 5. Selezionare appelli pomeridiani */
 SELECT * FROM `exams` WHERE `hour` >= '14:00:00'
+
+/*6. Selezionare corsi di laurea magistrale */
+SELECT * FROM `degrees` WHERE `level` = 'magistrale'
+
+/* 7. Da quanti dipartimenti è composta l'università: */
+SELECT * FROM `departments`
+/* Da 12 (id) */
+
+/* 8. Quanti insegnanti non hanno un numero di telefono: */
+SELECT * FROM `teachers` WHERE `phone` IS NULL
+/* Sono  50 (rows) */

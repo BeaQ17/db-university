@@ -11,7 +11,8 @@ SELECT * FROM `students` WHERE `date_of_birth` >= '1991-01-01'
 SELECT * FROM `courses` WHERE `period` = 'I semestre' AND `year` = 1
 
 /* 5. Selezionare appelli pomeridiani */
-SELECT * FROM `exams` WHERE `hour` >= '14:00:00'
+/*SELECT * FROM `exams` WHERE `hour` >= '14:00:00'*/
+SELECT * FROM `exams` WHERE `date` = '2020-06-20' AND `hour` >= '14:00:00'
 
 /*6. Selezionare corsi di laurea magistrale */
 SELECT * FROM `degrees` WHERE `level` = 'magistrale'

@@ -16,11 +16,11 @@ $connection = new mysqli(DB_SERVERNAME, DB_PORT, DB_NAME, DB_USERNAME, DB_PASSWO
 
 #3 verificare connessione
 if ($connection && $connection->connect_error) {
-    echo 
+    echo "Connessione fallita: " . $connection->connect_error;
     die();
 }
-
 #4 eseguire query - se la connessione è stabilita
+echo "Connessione riuscita"
 
 #5 controllare che ci siano risultati da mostrare
 

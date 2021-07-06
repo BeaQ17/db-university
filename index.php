@@ -20,9 +20,12 @@ if ($connection && $connection->connect_error) {
     die();
 }
 #4 eseguire query - se la connessione è stabilita
-echo "Connessione riuscita"
+echo "Connessione riuscita";
 
-#5 controllare che ci siano risultati da mostrare
+
+$sql = "SELECT * FROM projects";
+$results = $connection->query($sql);
+var_dump($results);
 
 ?>
 
@@ -36,5 +39,25 @@ echo "Connessione riuscita"
 </head>
 <body>
     
+    <?php
+    #5 controllare che ci siano risultati da mostrare 
+    if ($results && $results->num_rows > 0) {
+        while ($project = $results->fetch_array()) {
+            ?>
+            <h1><?= $project['title']; ?></h1>
+            <p><?= $project['description']; ?></p>
+        <?php
+        }
+        die();
+    } elseif ($results) {
+        echo "Nessun risultato";
+    } else {
+        echo "Errore query";
+    }
+
+    #6 chiudere connessione
+    $connection->close();
+    ?>
+
 </body>
 </html>

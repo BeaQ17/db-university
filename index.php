@@ -25,7 +25,7 @@ echo "Connessione riuscita";
 
 $sql = "SELECT * FROM projects";
 $results = $connection->query($sql);
-var_dump($results);
+//var_dump($results);
 
 ?>
 
